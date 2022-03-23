@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  웹접근성
+title:  "웹접근성"
 date:   2022-03-22 11:01:35 +0300
-image:  02.jpg
-tags:   Basic
+categories: [ Basic ]
+image:  image: assets/images/15.jpg
 ---
 
 # 웹접근성이란?
