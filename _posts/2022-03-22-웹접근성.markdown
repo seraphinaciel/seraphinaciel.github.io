@@ -3,18 +3,20 @@ layout: post
 title:  "웹접근성"
 date:   2022-03-22 11:01:35 +0300
 categories: [ Basic ]
-image:  image: assets/images/15.jpg
+image:  assets/images/15.jpg
+beforetoc: "Prism highlighter is a very powerful thing. In this article I'm going to show you what you can actually do with it, some tricks and tips while editing your post. Tocs is also enabled as you can see in summary."
+toc: true
 ---
 
 # 웹접근성이란?
 
-{% highlight markdown %}
+```html
 World Wide Web을 창시한 팀 버너스 리는 웹이란 장애에 구애 없이 모든 사람들이 손쉽게 정보를 공유할 수 있는 공간이라고 정의한다.
 즉, 접근성이란 장애인뿐만 아니라 모든 사람이 정보통신 기기나 서비스를 손쉽게 활용할 수 있도록 만드는 것을 말하는 것이다. 
 이러한 접근성 개념은 정보통신 분야에서 다양한 제품 및 서비스 간의 호환성 문제, 이동 정보통신 기기 등으로 그 필요성 및 중요성이 더욱 증대되고 있다.
-{% endhighlight %}
+```
 
-[웹접근성 연구소 바로가기][a-link1]
+[웹접근성 연구소 바로가기]
 
 
 ***
@@ -38,44 +40,44 @@ World Wide Web을 창시한 팀 버너스 리는 웹이란 장애에 구애 없�
 
 ### alt 태그
 
-{% highlight js %}
+```html
 <img src="hamburger.jpg" alt="큰 햄버거를 들고 있는 모습">
-{% endhighlight %}
+```
 
 ### figure
 
 ### 복잡한 이미지(표/ppt)의 경우
-[figure, figcaption을 이용하여 정보 제공][a-link2]
+[figure, figcaption을 이용하여 정보 제공]
 
 
-{% highlight js %}
+```html
 <figure>
 	<img src="hamburger.jpg" alt=""> 
 	<figcaption>큰 햄버거를 들고 있는 모습</figcaption>
 </figure>
-{% endhighlight %}
+```
 
 #### 제공하는 설명문이 대체텍스트에 대한 부연설명인 경우
 
-{% highlight js %}
+```html
 <figure> 
 	<img src="hamburger.jpg" alt="큰 햄버거를 들고 있는 모습"> 
 	<figcaption>햄버거는 예전에는 서양인들이 즐겨 먹었지만 요즘은 누구나 좋아하는 음식이다.</figcaption>
 </figure>   
-{% endhighlight %}
+```
 
 ### SVG 이미지에 대체텍스트를 추가
 
 role="img" 속성을 추가
 스크린리더마다 읽어주는데 약간의 차이는 있으나 이미지 콘텐츠는 대체텍스트와 함께 ‘그래픽’ 혹은 ‘이미지’ 등으로 음성출력
 
-{% highlight js %}
+```html
 <svg version="1" id="cat" viewBox="0 0 720 800" aria-labelledby="catTitle" aria-describedby="catDesc" role="img">
 	<title id="catTitle">친근한 고양이</title>
 	<desc id="catDesc">회색고양이가 주인에게 안겨 있는 모습</desc>
 	… 
 </svg>
-{% endhighlight %}
+```
 
 ### 동영상
 동영상, 음성 등 멀티미디어 콘텐츠를 이해할 수 있도록 대체 수단을 제공해야 한다.
@@ -137,9 +139,9 @@ role="img" 속성을 추가
 
 * 키보드 초점이동되는 요소 : a, area, button, input, textarea, object, select
 * div, p태그에 초점 이동시키려면? 
-{% highlight js %}
+```html
 <span><div tabindex="0">...</div></span>
-{% endhighlight %}
+```
 
 ### 본문건너뛰기 (Skip Navigation)
 마우스를 못쓰는사람은 키보드로 하나하나를 눌러서 이동을 하게 되는데, 계속 반복되는 상단메뉴 등을 지나 바로 본문으로 가게 하는 것.
@@ -149,7 +151,7 @@ role="img" 속성을 추가
 * 정확히 위치가 어디냐를 명확하게 해주기위해 콘텐츠바로가기라고 명시를 해주길 권장.
 * 키보드사용자들은 css없애고 보는 것과 마찬가지.
 
-{% highlight js %}
+```html
 <body>
 //다음줄, 최우선순위!	
 <ul id="skip-type1">
@@ -158,7 +160,7 @@ role="img" 속성을 추가
 </ul>
 <section id="content">본문시작</setion>
 //IE에서 작동오류가 날 경우에는 <a href="#" id="content" alt="본문시작"></a>를 적어준다
-{% endhighlight %} 
+``` 
 
 ***
 
@@ -166,7 +168,7 @@ role="img" 속성을 추가
 
 #### caption : 표에 대한 제목과 요약을 제공함으로써 표에 접근했을 때 먼저 표의 내용이 무엇이라는 정보를 알 수 있고, 원하는 정보일 경우에는 표에서 정보를 확인할 수 있다.
 
-{% highlight js %}
+```html
 <table>
 	<caption>과일가게 물품 리스트</caption>
 	<thead>
@@ -188,11 +190,11 @@ role="img" 속성을 추가
 		</tr>
 	</tbody>
 </table>
-{% endhighlight %} 
+``` 
 
 #### 테이블에서 headers 속성
 [headers 속성 바로가기][a-link3]
-{% highlight js %}
+```html
 <table>
 	<caption>과일가게 물품 리스트</caption>
 	<thead>
@@ -214,7 +216,7 @@ role="img" 속성을 추가
 		</tr>
 	</tbody>
 </table>
-{% endhighlight %}    
+```    
 
 1. 스크린리더에서 읽는 경우 '과일이름:사과'형태로 읽는다.
 2. headers 속성은 th 요소, td 요소를 id를 갖는 th 요소와 연결
@@ -228,7 +230,7 @@ role="img" 속성을 추가
 레이어 팝업 : 현재 페이지 위에 레이어로 띄우는 것이므로 팝업차단에 걸리지 않음
 
 웹접근에 위배되므로 팝업창(레이어팝업)은 사용하지 않는다.
-
+<!-- 
 [a-link1]: https://www.wah.or.kr:444/Participation/technique.asp
 [a-link2]: http://nuli.navercorp.com/sharing/blog/post/1132853
-[a-link3]: http://www.w3.org/TR/WCAG20-TECHS/H43.html
+[a-link3]: http://www.w3.org/TR/WCAG20-TECHS/H43.html -->
