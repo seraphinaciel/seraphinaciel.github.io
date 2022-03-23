@@ -11,6 +11,7 @@ mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/
 email: breeze_ciel@naver.com
+web: http://breezeciel.dothome.co.kr/
 
 # Authors
 authors:
