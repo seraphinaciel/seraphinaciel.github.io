@@ -611,18 +611,16 @@ body.active-side {
     .container, .container-sm, .container-md, .container-lg {
         max-width: 80%;
     }
+    .container {
+        padding-left:80px;
+    }
 }
 @media (min-width: 1440px) {
     .container, .container-sm, .container-md, .container-lg {
-        max-width: 1140px;
+        max-width: 1160px;
     }
 }
 @media (max-width: 1024px) {
-    .container {
-        width: 90%;
-        max-width:90%;
-        padding-left:80px;
-    }
     .blog-grid-container {
         grid-template-columns: 1fr 1fr;
     }
@@ -667,9 +665,6 @@ body.active-side {
 @media (max-width: 600px) {
     .nav-icon, .sidebar, .share, .wrap-search {
         position:relative;
-    }
-    .container {
-        padding-left:15px;
     }
     .site-content {
         padding-top:0;
