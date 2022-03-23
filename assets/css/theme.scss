@@ -394,7 +394,6 @@ img, img:hover {
 
 // blog 
 .article-post, .entry-header, .comments, .rating, .authorbox {
-    max-width: 740px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
@@ -406,8 +405,6 @@ img, img:hover {
     line-height:1.2;
 }
 .entry-featured-image {  
-    width:940px;  
-    max-width: 100%;
     text-align:center;
     margin-left:auto;
     margin-right: auto;
