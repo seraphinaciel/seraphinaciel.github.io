@@ -1,7 +1,5 @@
 ---
 
----
-
 $brown: #B59F62;
 $teal: #40FFDC;
 $black: #111;
@@ -612,17 +610,19 @@ body.active-side {
         max-width: 80%;
     }
 }
+@media (min-width: 1024px) {
+    .container {
+        padding-left:80px;
+    }
+}
 @media (min-width: 1440px) {
     .container, .container-sm, .container-md, .container-lg {
         max-width: 1140px;
     }
 }
+
+
 @media (max-width: 1024px) {
-    .container {
-        width: 90%;
-        max-width:90%;
-        padding-left:80px;
-    }
     .blog-grid-container {
         grid-template-columns: 1fr 1fr;
     }
