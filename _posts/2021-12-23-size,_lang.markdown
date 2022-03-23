@@ -1,0 +1,43 @@
+---
+layout: post
+title:  size, lang
+date:   2021-12-23 13:44:00 +0300
+image:  02.jpg
+tags:   Basic
+---
+
+# size
+
+* vw : % of the viewport width
+* vh : % of the viewport height
+* vi : 1% of the viewport size in the direction of the root element's inline axis
+* vb : 1% of the viewport size in the direction of the root element's block axis
+* vmin : the smaller of vw or vh
+* vmax : the larger or vw or vh
+
+* rem :브라우저에 설정된 폰트 크기를 상속, 레이아웃을 구성할 땐 픽셀 단위로 생각하고 결과는 나중에 rem 단위로 환산
+최상위 요소(html 요소)의 폰트 크기:16px
+10rem = 10 x 16 = 160(절대적)
+px 단위 대신, rem 단위를 사용 : 사용자가 브라우저의 기본 폰트 크기를 어떤 값으로 설정했든 간에, 이에 따른 가변 텍스트 크기에 맞춰서 사이트 레이아웃이 적절히 조정될 수 있도록 하려는 목적
+브라우저의 폰트 크기 설정에 따라 그 크기가 변해야 하는 곳에 사용.
+ex)media queries : rem 기반의 전환점이라면 여러 폰트 크기에도 올바로 반응.
+
+* em : 모든 상위 부모 요소로부터의 폰트 크기를 상속받으면서 영향, 최상위 요소에 지정된 폰트 크기 말고, 다른 특정 요소의 폰트 크기에 따라 그 크기가 변해야 하는 곳에 사용
+어느 한 div(스타일을 지정한 요소)의 폰트 크기 : 18px
+10em = 10 x 18 = 180(상대적, 꼭 필요할 때만 사용)
+사이트 이동 메뉴에 속해 있는 각 항목마다 주변에 padding, margin 그리고 line-height을 설정할 때 em 값을 사용
+em 단위를 쓸 땐 상속에 따른 애매한 상황을 피하고 또 크기가 대칭적으로 변할 수 있도록, 지정한 요소의 폰트 크기는 꼭 rem 단위사용
+
+* em과 rem 모두 쓰지 말아야 하는 곳
+1. 다중 칼럼 레이아웃의 너비 : 다중 칼럼 레이아웃의 너비에는 em 혹은 rem을 쓰진 마십시오 - 대신 %를 쓰세요. 만약에 크기가 변할 경우 해당 요소의 레이아웃이 깨지는 걸 막을 수 없다면 em과 rem 모두 쓰지 마세요.
+칼럼이 하나일 경우에도 일반적으로 max-width에 rem 값을 지정해 놓아도 원만히 작동
+.container { width: 100%; max-width: 75rem;}
+이렇게 하면 칼럼의 크기는 유동적으로 변하지만, 동시에 그 안에 있는 글이 읽기 불편할 정도로 너무 넓어지는 것도 막을 수 있다.
+2. 요소의 크기가 절대 변하면 안 되는 상황일 때
+
+***
+
+# lang
+
+한국어 ko / 영어 en / 중국어 zh / 일본어 ja / 독일어 de / 러시아어 ru / 불어 fr / 스페인어 es
+
