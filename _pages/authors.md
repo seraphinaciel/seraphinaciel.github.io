@@ -144,8 +144,9 @@ The mind-warping film opened with a hospital patient Simon Cable (Ryan Phillippe
 
 ### Images
 
-![]({{site.baseurl}}/images/09.jpg)
+![](/assets/images/screenshot.jpg.jpg)
 *Backyard*
-<img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+<img src="{{ site.baseurl }}/{{ site.logo }}" alt="logo">
+*logo*
 
 ***
