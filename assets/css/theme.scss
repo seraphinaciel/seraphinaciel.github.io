@@ -20,7 +20,8 @@ $enable-rounded: false;
 // general
 body, input, button, select, optgroup, textarea {   
     font-family:Sen, 'Noto Sans KR';
-    font-weight:100;
+    font-weight:400;
+    letter-spacing:-0.025em;
 }
 body {
     line-height:1.7;
@@ -441,7 +442,7 @@ img, img:hover {
     }
 }
 .article-post {    
-    font-size:18px;
+    /*font-size:18px;*/
     p {
         margin-top:30px;
         margin-bottom:30px;
