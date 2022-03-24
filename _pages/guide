@@ -5,42 +5,6 @@ permalink: /guide
 comments: false
 ---
 
-### YAML Post Example:
-```html
----
-layout: post
-title:  "We all wait for summer"
-author: john
-categories: [ Lifestyle, Travel ]
-tags: [ France ]
-image: assets/images/5.jpg
-description: "Something about this post here"
----
-```
-
-### YAML Page Example
-```html
----
-layout: page
-title: About Memoirs
-permalink: /Guide
-comments: false <!--comments false / true-->
----
-```
-
-### Rating
-```html
----
-layout: post
-title:  "Inception Movie"
-author: john
-categories: [ Lifestyle ]
-tags: [red, yellow]
-image: assets/images/11.jpg
-description: "My review of Inception movie. Actors, directing and more."
-rating: 4.5
----
-```
 
 ### Paragraph
 A paragraph looks like this — dolor amet cray stumptown fingerstache neutra food truck seitan poke cardigan waistcoat VHS snackwave celiac hella. Godard seitan shoreditch flexitarian next level trust fund man braid vegan listicle keytar bitters. Disrupt cray fashion axe unicorn lomo shaman poke glossier keffiyeh snackwave austin tattooed seitan hexagon lo-fi. Lumbersexual irony vaporware, butcher shaman church-key iceland.
