@@ -1,18 +1,82 @@
 ---
 layout: post
-title:  " Culinary Arts in Europe by Jean Anthelme Brillat-Savarin"
-author: sal
-categories: [ Lifestyle ]
-image: assets/images/7.jpg
+title:  "플렉스를 쓰지 않고 div로 수직 정렬해보자!"
+author: sera
+categories: [ basic ]
+tags: [ css ]
+image: assets/images/5.jpg
 ---
-The origins of culinary began with primitive humans roughly 2 million years ago. There are various theories as to how early humans used fire to cook meat. According to anthropologist Richard Wrangham, author of Catching Fire: How Cooking Made Us Human, primitive humans simply tossed a raw hunk of meat into the flames and watched it sizzle. Another theory claims humans may first have savoured roasted meat by chance when the flesh of a beast killed in a forest fire was found to be more appetizing and easier to chew and digest than the conventional raw meat.
 
-Culinary techniques improved with the introduction of earthenware and stoneware, the domestication of livestock, and advancements in agriculture. In early civilizations, the primary employers of professional chefs were kings, aristocrats, or priests. The divide between professional chefs cooking for the wealthy and peasants cooking for their families engendered the development of many cuisines.
+이번 장에서는 flex를 쓰지 않고 수직 정렬을 해보는 방법을 알아보자
+아직 우리나라는 익스플로러를 많이 사용하고 있기 때문에 새로 나오는 신기술보다는 이전 구기술을 많이 사용하고 있다.
+(알다시피 익스플로러는 지원하지 않는게 너무 많다. 망)
+특히 관공서가 그러하다. flex를 쓰지 않고도 수직 정렬을 하고 싶은 당신에게 이 글이 도움이 될 거라 믿는다.
 
-A great deal of the study of Culinary Arts in Europe was organized by Jean Anthelme Brillat-Savarin, a man famous for his quote "Tell me what you eat, and I will tell you what you are," which has since been mistranslated and oversimplified into "You are what you eat." Other people helped to parse out the different parts of food science and gastronomy. Over time, increasingly deeper and more detailed studies into foods and the Culinary Arts has led to a greater wealth of knowledge.
+***
 
-In Asia, a similar path led to a separate study of the Culinary Arts, which later essentially merged with the Western counterpart. In the modern international marketplace, there is no longer a distinct divide between Western and Eastern foods. Culinary Arts students today, generally speaking, are introduced to the different cuisines of many different cultures from around the world.
+#### position
 
-The Culinary Arts, in the Western world, as a craft and later as a field of study, began to evolve at the end of the Renaissance period. Prior to this, chefs worked in castles, cooking for kings and queens, as well as their families, guests, and other workers of the castle. As Monarchical rule became phased out as a modality, the chefs took their craft to inns and hotels. From here, the craft evolved into a field of study.
+```html
+<div class="flow_box">
+	<div class="title"><i><span>훈민정음<br>-세종대왕</span></i></div>
+	<div class="text">
+		<ul>
+			<li>훈민정음
+				<p>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</p>
+			</li>
+			<li>훈민정음
+				<p>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</p>
+			</li>
+			<li>훈민정음
+				<p>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</p>
+			</li>
+			<li>훈민정음
+				<p>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<i class="arr"><i>다음절차</i></i>
+```
 
-Before cooking institutions, professional cooks were mentors for individual students who apprenticed under them. In 1879, the first cooking school was founded in the United States: the Boston Cooking School. This school standardized cooking practices and recipes, and laid the groundwork for the culinary arts schools that would follow.
+#### position 간소화 + translate
+
+``html
+<div class="flow_box2">
+	<div>
+		<div>훈민정음</div>
+	</div>
+	<div>
+		<div>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</div>
+	</div>
+</div>
+
+#### position 간소화
+
+``html
+<div class="flow_box3">
+	<div>
+		<div class="title">
+			<p><span><i>훈민정음</i></span></p>
+		</div>
+	</div>
+	<div>
+		<div class="title">
+			<p><span><i>세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라. </i></span></p>
+		</div>
+	</div>
+</div>
+```
+
+#### display:table
+
+``html
+<div class="flow_box1">
+	<div>
+		<div class="title1">훈민정음</div>
+	</div>
+	<div>
+		<div class="title1">세종 어제 훈민정음 우리나라의 말이 중국과 달라 문자(한자)와 서로 통하지 아니하여 이런 까닭으로 어리석은 백성이 말하고자 할 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람(경우)이 많으니라 내 이를 위하여 가엾게 여겨 새로 스물여덟 자를 만드노니 사람마다 하여금 쉬이 익혀 날로 씀에 편안케 하고자 할 따름이니라.</div>
+	</div>
+</div>
+```
