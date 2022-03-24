@@ -49,7 +49,6 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
 ```html
 **Point**
 ```
-***
 
 ### Headings by default:
 
@@ -69,7 +68,6 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
 ###### This is the default title
 ```
 
-***
 
 ### code
 backtick(*3) + [code name]
@@ -83,7 +81,6 @@ backtick(*3) + [code name]
 </li>
 ```
 
-***
 
 ### Link
 참고 : <a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/" class="btn btn-dark"> 바로가기 &rarr;</a>
@@ -91,8 +88,6 @@ backtick(*3) + [code name]
 ```html
 <a target="_blank" href="link" class="btn btn-dark"> 바로가기 &rarr;</a>
 ```
-
-***
 
 ### Lists
 
@@ -104,7 +99,6 @@ backtick(*3) + [code name]
 4. Jean shorts shaman listicle pickled portland.
 5. Salvia mumblecore brunch iPhone migas.
 
-***
 
 #### Unordered list example:
 
@@ -115,7 +109,6 @@ backtick(*3) + [code name]
 * Pug you probably haven't heard of them air plant man bun.
 
 
-***
 
 ### Quotes
 
@@ -124,7 +117,7 @@ backtick(*3) + [code name]
 ```html
 > "There's almost no single moment in Portrait of a Lady on Fire that couldn't be captured, mounted, and hung on a wall as high art." <cite>— Entertainment Weekly</cite>
 ```
-***
+
 
 ### Spoiler
 
@@ -134,17 +127,15 @@ The mind-warping film opened with a hospital patient Simon Cable (Ryan Phillippe
 <span class="spoiler">My hidden paragraph here.</span>
 ```
 
-***
+
 
 ### Videos
 
-<iframe src="https://www.youtube.com/embed/iWowJBRMtpc" frameborder="0" allowfullscreen></iframe>
 
-***
+
 
 ### Images
 
-![]({{site.baseurl}}/images/09.jpg)
-*Backyard*
+
 <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-***
+
