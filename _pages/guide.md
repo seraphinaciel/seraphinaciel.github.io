@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Style Guide
+title: Guide
 permalink: /guide
 comments: false
 ---
