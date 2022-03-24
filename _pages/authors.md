@@ -86,10 +86,28 @@ backtick(*3) + [code name]
 ***
 
 ### Link
-참고 : <a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/" class="btn btn-dark"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-dark"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-light"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-primary"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-secondary"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-success"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-warning"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-danger"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-light"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-dark"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-info"> 바로가기 &rarr;</a>
 
 ```html
 <a target="_blank" href="link" class="btn btn-dark"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-light"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-primary"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-secondary"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-success"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-warning"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-danger"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-light"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-outline-dark"> 바로가기 &rarr;</a>
+<a target="_blank" href="link" class="btn btn-info"> 바로가기 &rarr;</a>
 ```
 
 ***
