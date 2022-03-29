@@ -6,13 +6,13 @@ categories: [ basic ]
 tags: [ css ]
 image: assets/images/17.jpg
 ---
-
+<!--https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573-->
 2000년대 초에는 %와 px로만 홈페이지를 만들어왔다.
 그 당시에는 반응형이라는 말이 따로 없고, 넓이 1000px로 고정된 사이트만 있었기 때문이다(아마도).
 조금 더 나아가 모바일 웹을 만들기도 했다. 당연히 똑같은 디자인일 수 없고, 당연히 같은 코드를 가지고 있지도 않았다.
 단지 같은 이름만 가진 다른 사이트를 두개씩 만들어왔던 것이다.
-px로만 홈페이지를 만드는게 당연했다.
-각설하고, 반응형 웹에서 편하게 사용할 수 있는 사이즈 단위를 살펴보자.
+당연히 절대적 길이인 px로만 홈페이지를 만들어왔다.
+각설하고, 반응형 웹에서 편하게 사용할 수 있는 상대적 길이 단위를 살펴보자.
 
 <style>
 .vSize{background:gray;text-align:center;font-size:1.2rem}
