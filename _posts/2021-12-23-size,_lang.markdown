@@ -15,7 +15,7 @@ px로만 홈페이지를 만드는게 당연했다.
 각설하고, 반응형 웹에서 편하게 사용할 수 있는 사이즈 단위를 살펴보자.
 
 <style>
-.vSize p{background:gray;text-align:center;font-size:1.2rem}
+.vSize{background:gray;text-align:center;font-size:1.2rem}
 .10vw{width:40vw;}
 .10vh{height:40vh;}
 .10vi{width:40vi;}
@@ -27,22 +27,22 @@ px로만 홈페이지를 만드는게 당연했다.
 #### 브라우저/디바이스에 따라 변함
 
 * vw : 브라우저 넓이가 기준인 %
-<p class="10vw">넓이 10vw</p>
+<p class="vSize 10vw">넓이 10vw</p>
 
 * vh : 브라우저 높이가 기준인 %
-<p class="10vh">높이 10vh</p>
+<p class="vSize 10vh">높이 10vh</p>
 
 * vi : 루트 요소의 인라인 축 방향으로 뷰포트 크기의 1%
-<p class="10vi">높이 10vi</p>
+<p class="vSize 10vi">높이 10vi</p>
 
 * vb : 루트 요소의 블록 축 방향으로 뷰포트 크기의 1%
-<p class="10vb">높이 10vb</p>
+<p class="vSize 10vb">높이 10vb</p>
 
 * vmin : vw 또는 vh 중 작은 것
-<p class="10vmin">높이 10vminn</p>
+<p class="vSize 10vmin">높이 10vminn</p>
 
 * vmax : the larger or vw or vh
-<p class="10vmax">높이 10vmax</p>
+<p class="vSize 10vmax">높이 10vmax</p>
 
 * rem :브라우저에 설정된 폰트 크기를 상속, 레이아웃을 구성할 땐 픽셀 단위로 생각하고 결과는 나중에 rem 단위로 환산
 최상위 요소(html 요소)의 폰트 크기:16px
