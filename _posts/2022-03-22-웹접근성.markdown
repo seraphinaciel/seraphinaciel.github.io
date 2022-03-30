@@ -16,7 +16,13 @@ World Wide Web을 창시한 팀 버너스 리는 웹이란 장애에 구애 없�
 
 <a target="_blank" href="https://www.wah.or.kr:444/Participation/technique.asp" class="btn btn-dark"> 웹접근성 연구소 바로가기 &rarr;</a>
 
-
+<style>
+.wa_clear a:hover,.wa_clear a:focus{color:white;background: firebrick;}
+.wa_clear li{padding:1em;}
+.wa_clear i{width:1.2rem;height:1.2rem;border-radius:50%;background:green;display:inline-block}
+.wa_clear .bg01{background: #777;color:#fff}
+.wa_clear .bg02{background: #ccccff;color:#fff}
+</style>
 #### 이미지 대체텍스트
 
 **정의**
@@ -69,6 +75,7 @@ role="img" 속성을 추가, 스크린리더마다 읽어주는데 약간의 차
   ```
   
 4.**동영상**
+
 동영상, 음성 등 멀티미디어 콘텐츠를 이해할 수 있도록 대체 수단을 제공해야 한다.
 * 멀티미디어 콘텐츠는 자막, 원고 또는 수화를 멀티미디어 콘텐츠와 동등한 내용을 제공해야 한다.
 * 가장 바람직한 방법은 닫힌 자막을 오디오와 동기화시켜 제공하는 것이다.
@@ -84,16 +91,32 @@ role="img" 속성을 추가, 스크린리더마다 읽어주는데 약간의 차
 
 * 밑줄, 폰트 굵기, 패턴, 다른 디자인등
 * 시각적 강조를 위해 일부 문구에 색을 넣은 경우, 폰트 굵기, 크기, 패턴(기울임)같은 효과를 주되 밑줄은 링크로 혼동되니 콘텐츠 성격과 전체 상황에 맞게 적용
+![](assets/images/images/wa_img01.jpg)
+
+*색, 패턴으로 콘텐츠를 시각적으로 강조한 달력*
+
 * hover, focus 동일 사용 : ex) a:hover, a:focus
+<div class="wa_clear">
+	<p><a href="">마우스 효과를 줘보았다.</a></p>
+</div>
+
 * 인디케이터(제어버튼) 크기는 라디오 버튼보다 커야함, 모바일 최적화 서체(120% 확대)
+<div class="wa_clear">
+	<ul>
+		<li><input type="radio" value="HTML" name="chk_info">라디오 버튼 13px</li>
+		<li><i></i>인디케이터</li>
+	</ul>
+</div>
 
 #### 명도대비
 웹 페이지에 보이는 핵심 텍스트 콘텐츠와 배경 간의 충분한 대비를 제공하여 저시력자, 색각 이상자, 고령자 등도 콘텐츠를 인식할 수 있도록 제공해야 한다.
 다만, 로고, 장식 목적의 콘텐츠, 마우스나 키보드를 활용하여 초점을 받았을 때 명도 대비가 커지는 콘텐츠 등은 예외로 한다.
 
 * 텍스트 및 텍스트 이미지와 배경 간의 명도 대비는 4.5 : 1 이상
-	* 배경 #7777 폰트 #fff 4.4 : 1 (준수)
-	* 배경 ##ccccff 폰트 #fff 1.5 : 1 (미준수)
+<div class="wa_clear">
+	<p class="bg01">명도대비 배경 4.4 : 폰트 1 (준수)</p>
+	<p class="bg02">명도대비 배경 1.5 : 폰트 1 (미준수)</p>
+</div>
 * 14pt 이상의 굵은 폰트 또는 18pt 이상, 화면 확대가 가능한 페이지의 경우 - 3:1
 * 사진은 명도 대비 할 필요 없고 대체텍스트를 이용해 설명하면 된다.
 
@@ -101,21 +124,15 @@ role="img" 속성을 추가, 스크린리더마다 읽어주는데 약간의 차
 #### 문서의 논리적 배치
 콘텐츠의 순서는 논리적이며 일관성이 있어야 한다. (좌측 상단 영역에서 우측 하단 영역으로 이동)
 
-1. **게시판 : 제목 → 내용 → 더보기 버튼 순으로 내용 제공이 적절**
-![]({{site.baseurl}}/images/09.jpg)
-*게시판의 논리적 배치*
+1. **게시판 : 제목 → 내용 → 더보기 버튼 순으로 내용 제공이 적절** 탭 : 탭제목1 → 탭내용1 → 탭제목2 → 탭내용2 순서로 제공
+![](assets/images/images/wa_img02.jpg) 
+![](assets/images/images/wa_img03.jpg)
 
-2. **슬라이드 이미지 박스 : 기타 순서상 제목 → 제어버튼 → 내용 순을 권장**
-![]({{site.baseurl}}/images/09.jpg)
-*인포존, 비주얼존 등 롤링 이미지의 논리적 배치*
+2. **슬라이드 이미지 박스 : 기타 순서상 제목 → 제어버튼 → 내용 순을 권장** 
+![](assets/images/images/wa_img04.jpg)
 
 3. **상단 메뉴 : 메뉴열기 → 메뉴 → 메뉴닫기가 키보드 흐름상 논리적**
-![]({{site.baseurl}}/images/09.jpg)
-*상단 메뉴의 논리적 배치*
-
-4. **탭 : 탭제목1 → 탭내용1 → 탭제목2 → 탭내용2 순서로 제공**
-![]({{site.baseurl}}/images/09.jpg)
-*공지사항 등 탭의 논리적 배치*
+![](assets/images/images/wa_img05.jpg)
 
 ***
 
