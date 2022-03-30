@@ -16,7 +16,7 @@ image: assets/images/17.jpg
 
 <style>
 .sRelative{background: #ccc;font-size:20px}
-.sRelative li{margin:1rem 0}
+.sRelative li{margin:1rem 0;list-style: none}
 .sRelative li:nth-child(1){width: 100%;background:pink}
 .sRelative li:nth-child(2){width:10em;background:royalblue;color:white}
 .sRelative li:nth-child(3){width:10rem;background:dimgrey;color:white}
@@ -38,7 +38,7 @@ image: assets/images/17.jpg
 	
 .sDontFont{width:900px;padding:20px 0;background: #ccc;font-size:20px;}
 .sDontFont::after{content: "";clear: both;display: block;}
-.sDontFont li{height:10vh;margin:10px 0;background: red;float: left}
+.sDontFont li{height:10vh;margin:10px 0;background-color: burlywood;float: left;list-style: none}
 .sDontFont li:nth-child(1){width:50%;}
 .sDontFont li:nth-child(2){width:50rem;}
 .sDontFont li:nth-child(3){width:50em;}
