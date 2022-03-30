@@ -6,7 +6,7 @@ categories: [ basic ]
 tags: [ css ]
 image: assets/images/17.jpg
 ---
-<!--https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573-->
+
 2000년대 초에는 %와 px로만 홈페이지를 만들어왔다.
 그 당시에는 반응형이라는 말이 따로 없고, 넓이 1000px로 고정된 사이트만 있었기 때문이다(아마도).
 조금 더 나아가 모바일 웹을 만들기도 했다. 당연히 똑같은 디자인일 수 없고, 당연히 같은 코드를 가지고 있지도 않았다.
@@ -130,8 +130,7 @@ div { width: 100%; max-width: 75rem;}
 	<li>width:100%, max-width:16rem(256px)</li>
 </ul>
 
-
-
+<a target="_blank" href="https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573" class="btn btn-outline-dark"> 바로가기 &rarr;</a>
 
 ***
 
