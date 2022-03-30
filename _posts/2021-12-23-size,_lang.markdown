@@ -15,58 +15,126 @@ image: assets/images/17.jpg
 각설하고, 반응형 웹에서 편하게 사용할 수 있는 상대적 길이 단위를 살펴보자.
 
 <style>
-.vSize{background:gray;text-align:center;font-size:1.2rem}
-.10vw{width:40vw;}
-.10vh{height:40vh;}
-.10vi{width:40vi;}
-.10vb{height:40vb;}
-.10vmin{width:40vmin;}
-.10vmax{height:40vmax;}
+.sRelative{background: #ccc;font-size:20px}
+.sRelative li{margin:1rem 0}
+.sRelative li:nth-child(1){width: 100%;background:pink}
+.sRelative li:nth-child(2){width:10em;background:royalblue;color:white}
+.sRelative li:nth-child(3){width:10rem;background:dimgrey;color:white}
+.sRelative li:nth-child(n+4):nth-child(-n+5){width:10ch;background: darkblue;color: white;}
+.sRelative li:nth-child(n+6):nth-child(-n+7){background:powderblue;}
+.sRelative sup {position:relative;bottom: 1ex;}
+.sRelative sub {position:relative;bottom: -1ex;}
+	
+.sView .sVw{width:10vw;background:lavender;}
+.sView .sVh{width:10vh;background:yellow;}
+.sView .sVmin{width:10vmin;background:lightgray;}
+.sView .sVmax{width:10vmax;background:aliceblue;}
+	
+.sFont{border:1px solid #ddd;font-size:20px}
+.sFont .sBody{font-size:1rem;}
+.sFont .sDiv{}
+.sFont .sRem{font-size:2rem;}
+.sFont .sEm{font-size:2em;}
+	
+.sDontFont{width:900px;padding:20px 0;background: #ccc;font-size:20px;}
+.sDontFont::after{content: "";clear: both;display: block;}
+.sDontFont li{height:10vh;margin:10px 0;background: red;float: left}
+.sDontFont li:nth-child(1){width:50%;}
+.sDontFont li:nth-child(2){width:50rem;}
+.sDontFont li:nth-child(3){width:50em;}
+.sDontFont li:nth-child(4){width:100%;max-width:16rem}
 </style>
 
-#### 브라우저/디바이스에 따라 변함
+#### 절대적 단위
+* cm
+* mm
+* in(1in = 2.54cm = 96px)
+* pt
+* px
+* pc
 
-* vw : 브라우저 넓이가 기준인 %
-<p class="vSize 10vw">넓이 10vw</p>
+***
 
-* vh : 브라우저 높이가 기준인 %
-<p class="vSize 10vh">높이 10vh</p>
 
-* vi : 루트 요소의 인라인 축 방향으로 뷰포트 크기의 1%
-<p class="vSize 10vi">높이 10vi</p>
+#### 상대적 단위 : 브라우저/디바이스에 따라 변함, font etc.
+* % 
+* em
+* rem
+* ex : 현재 폰트의 x-높이값(소문자 x의 높이값) / em의 절반 값
+	* 사용 중인 글꼴, 글꼴 사이즈에 따라 변경된다.
+	* 글꼴의 중간 지점을 알아내기 위해 사용(CSS1부터 있던 단위)
+	* 타이포그래픽에서 세밀한 조정을 할 때 사용. ex. sup, sub
+```css
+sup {
+    position: relative;
+    bottom: 1ex;
+}
+sub {
+    position: relative;
+    bottom: -1ex;
+}
+```
+* ch : 문자(0)의 너비값을 기준함
+	* 사용중인 글꼴, 글꼴 사이즈에 따라 변경된다.
+	* monospace 폰트의 N 의 너비값을 부여 받았다. 이 특정 규칙은 점자 레이아웃에 기반.
+	* width: 20ch;는 20개의 문자열을 포함
+	* 20ch = 00000000000000000000
+<ul class="sRelative">
+	<li>%</li>
+	<li>em</li>
+	<li>rem</li>
+	<li>ch</li>
+	<li>0000000000</li>
+	<li><sup>Hello xX</sup></li>
+	<li><sub>Hello xX</sub></li>
+</ul>
 
-* vb : 루트 요소의 블록 축 방향으로 뷰포트 크기의 1%
-<p class="vSize 10vb">높이 10vb</p>
+***
 
-* vmin : vw 또는 vh 중 작은 것
-<p class="vSize 10vmin">높이 10vminn</p>
 
-* vmax : the larger or vw or vh
-<p class="vSize 10vmax">높이 10vmax</p>
+##### 뷰포트 단위
+* vw / vh : 브라우저 넓이/높이를 기준으로 % 설정 (n/100), 브라우저 화면의 크기에 맞춰 크기를 반환(상대적), 스크롤바 크기를 포함한 전체 크기 기준
+* vmin / vmax : 뷰포트 너비 또는 높이를 기준으로 하는 최소 값 / 최대 값입니다.
+<div class="sView">
+	<p class="sVw">width 10vw</p>
+	<p class="sVh">width 10vh</p>
+	<p class="sVmin">width 10vmin</p>
+	<p class="sVmax">width 10vmax</p>
+</div>
+* rem : 브라우저에 설정된 폰트 크기를 상속(r은 최상위를 뜻하는 root).
+	* 브라우저의 폰트 크기 설정에 따라 그 크기가 변해야 하는 곳에 사용(반응형웹에 적합).
+	* 레이아웃 구성시 px 단위로 생각하고 rem 단위로 환산한다.
+	* 10rem = 10 x 16(최상위 요소의 폰트 크기) = 160px
+* em : 모든 상위 부모 요소로부터 폰트 크기를 상속.
+	* 특정 요소(최상위가 아니라 부모 요소)의 폰트 크기가 기준.<br>
+	* 10em = 10 x 18(어느 한 div(스타일을 지정한 요소)의 폰트 크기) = 180px
+<div class="sFont">
+	<p class="sBody">[body] font size = 16px</p>
+	<p class="sDiv">[div] font size = 20px</p>
+	<p class="sRem">[2rem] 16px * 2 = 32px(절대적)</p>
+	<p class="sEm">[2em] 20px * 2 = 40px(상대적, 꼭 필요할 때만 사용)</p>
+</div>
 
-* rem :브라우저에 설정된 폰트 크기를 상속, 레이아웃을 구성할 땐 픽셀 단위로 생각하고 결과는 나중에 rem 단위로 환산
-최상위 요소(html 요소)의 폰트 크기:16px
-10rem = 10 x 16 = 160(절대적)
-px 단위 대신, rem 단위를 사용 : 사용자가 브라우저의 기본 폰트 크기를 어떤 값으로 설정했든 간에, 이에 따른 가변 텍스트 크기에 맞춰서 사이트 레이아웃이 적절히 조정될 수 있도록 하려는 목적
-브라우저의 폰트 크기 설정에 따라 그 크기가 변해야 하는 곳에 사용.
-ex)media queries : rem 기반의 전환점이라면 여러 폰트 크기에도 올바로 반응.
+**대부분 em 단위는 padding, margin, line-height 등 부모 요소를 상속받아야 할 경우에 사용하고, rem 단위는 font-size, grid 등에 사용한다.**
+##### em과 rem 모두 쓰지 말아야 하는 곳
+1. 요소의 크기가 절대 변하면 안 되는 상황일 때
+2. 다중 칼럼 레이아웃의 너비 : 다중 칼럼 레이아웃의 너비에는 %를 사용한다. em이나 rem은 가변적이지 않기에... 브라우저 너비가 변할 경우 레이아웃이 깨져버린다.
+3. **해결책** 유동적으로 칼럼의 크기가 변하지만 최대 너비를 설정하여 기준점보다 더 커지지 못하게 한다.
+```css
+div { width: 100%; max-width: 75rem;}
+```
+<ul class="sDontFont">
+	<li>50% : 250px</li>
+	<li>50rem : 800px</li>
+	<li>50em : 1000px</li>
+	<li>width:100%, max-width:16rem(256px)</li>
+</ul>
 
-* em : 모든 상위 부모 요소로부터의 폰트 크기를 상속받으면서 영향, 최상위 요소에 지정된 폰트 크기 말고, 다른 특정 요소의 폰트 크기에 따라 그 크기가 변해야 하는 곳에 사용
-어느 한 div(스타일을 지정한 요소)의 폰트 크기 : 18px
-10em = 10 x 18 = 180(상대적, 꼭 필요할 때만 사용)
-사이트 이동 메뉴에 속해 있는 각 항목마다 주변에 padding, margin 그리고 line-height을 설정할 때 em 값을 사용
-em 단위를 쓸 땐 상속에 따른 애매한 상황을 피하고 또 크기가 대칭적으로 변할 수 있도록, 지정한 요소의 폰트 크기는 꼭 rem 단위사용
 
-* em과 rem 모두 쓰지 말아야 하는 곳
-1. 다중 칼럼 레이아웃의 너비 : 다중 칼럼 레이아웃의 너비에는 em 혹은 rem을 쓰진 마십시오 - 대신 %를 쓰세요. 만약에 크기가 변할 경우 해당 요소의 레이아웃이 깨지는 걸 막을 수 없다면 em과 rem 모두 쓰지 마세요.
-칼럼이 하나일 경우에도 일반적으로 max-width에 rem 값을 지정해 놓아도 원만히 작동
-.container { width: 100%; max-width: 75rem;}
-이렇게 하면 칼럼의 크기는 유동적으로 변하지만, 동시에 그 안에 있는 글이 읽기 불편할 정도로 너무 넓어지는 것도 막을 수 있다.
-2. 요소의 크기가 절대 변하면 안 되는 상황일 때
+
 
 ***
 
 # lang
 
 한국어 ko / 영어 en / 중국어 zh / 일본어 ja / 독일어 de / 러시아어 ru / 불어 fr / 스페인어 es
-
