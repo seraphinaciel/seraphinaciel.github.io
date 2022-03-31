@@ -648,6 +648,11 @@ body.active-side {
     .firstpage .blog-grid-item:nth-child(3) .img-thumb {
         height:auto;
     }
+    .firstpage .blog-grid-item:nth-child(2), .blog-grid-item:nth-child(3) {
+        .card-text {
+            display:block;
+        }
+     }
     .newsletter {
         span.h4 {
             font-size: 20px;
