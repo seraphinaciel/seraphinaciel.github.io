@@ -298,42 +298,7 @@ img, img:hover {
         object-position:top;
     }
 }
-.firstpage {
-    .blog-grid-item:nth-child(1) {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        flex-direction: column;  
-        align-items: flex-start;
-        font-size: 1em;
-        padding:0;
-        .card-title {
-            font-size:28px;
-        }
-        .img-thumb {
-            object-fit:cover;
-            height:400px;
-            width:100%;
-            object-position:top;
-        }
-    }
 
-    .blog-grid-item:nth-child(2), .blog-grid-item:nth-child(3) {
-        .card-text {
-            display:none;
-        }
-        .img-thumb {
-            object-fit:cover;
-            height:160px;
-            width:100%;
-            object-position:top;
-        }
-        .card-title {
-            line-height:1.5;
-        }      
-    }
-}
 
 //pagination
 .pagination {
@@ -614,6 +579,44 @@ body.active-side {
         padding-left:80px;
     }
 }
+@media (min-width: 1024px) {
+	.firstpage {
+		.blog-grid-item:nth-child(1) {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: 1;
+			grid-row-end: 3;
+			flex-direction: column;  
+			align-items: flex-start;
+			font-size: 1em;
+			padding:0;
+			.card-title {
+				font-size:28px;
+			}
+			.img-thumb {
+				object-fit:cover;
+				height:400px;
+				width:100%;
+				object-position:top;
+			}
+		}
+
+		.blog-grid-item:nth-child(2), .blog-grid-item:nth-child(3) {
+			.card-text {
+				display:none;
+			}
+			.img-thumb {
+				object-fit:cover;
+				height:160px;
+				width:100%;
+				object-position:top;
+			}
+			.card-title {
+				line-height:1.5;
+			}      
+		}
+	}
+}
 @media (min-width: 1440px) {
     .container, .container-sm, .container-md, .container-lg {
         max-width: 1160px;
@@ -627,11 +630,6 @@ body.active-side {
         max-height: 50px;
         float: left;
     }
-    .firstpage .blog-grid-item:nth-child(2), .firstpage .blog-grid-item:nth-child(3) {
-        .card-text {
-            display:block;
-        }
-     }
 }
 @media (max-width: 768px) {
     .posttitle {
@@ -665,7 +663,6 @@ body.active-side {
         }
     }
 }
-
 @media (max-width: 600px) {
     .nav-icon, .sidebar, .share, .wrap-search {
         position:relative;
