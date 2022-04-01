@@ -3,8 +3,8 @@ layout: post
 title:  "브라우저에서 사용할 수 있는 사이즈는 뭐가 있을까?"
 author: sera
 categories: [ basic ]
-tags: [ css ]
-image: assets/images/17.jpg
+tags: [ css, font ]
+image: assets/images/thum-basic.jpg
 ---
 
 2000년대 초에는 %와 px로만 홈페이지를 만들어왔다.
