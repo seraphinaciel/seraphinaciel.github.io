@@ -35,7 +35,15 @@ post_class: post-template
     {% include adsense-under-header.html %}
 {% endif %}
 
-<p style="font-size:2em">{{ page.categories }}, {{ tag }} </p>
+
+   
+<p style="font-size:2em">
+    {% assign sortedCategories = page.categories | sort %}
+    {% for category in sortedCategories %}
+    {{ page.categories }}, {{ category }}, {{ tag }} 
+    {% endfor %}
+    {{ page.categories }}, {{ category }}, {{ tag }} 
+</p>
 <!-- Featured Image -->
 <!-- {% include featured-image.html %} -->
 
