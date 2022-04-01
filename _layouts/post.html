@@ -11,7 +11,7 @@ post_class: post-template
     <!-- Author & Date  Box -->
     {% assign author = site.authors[name] %}
     {% if page.author %}
-    <div class="d-flex align-items-center mt-4" style="justify-content:space-between">         
+    <div class="d-flex mt-4" style="justify-content: end;border-bottom: 1px solid #999;">         
         <div>
             By <strong>{{ site.name }}</strong> on 
         <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
@@ -19,7 +19,7 @@ post_class: post-template
         (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
         {% endif %}
         </div>            
-        <div>
+<!--         <div>
             {% assign sortedCategories = page.categories | sort %}
             {% for category in sortedCategories %}
             <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>                
@@ -28,7 +28,7 @@ post_class: post-template
             {% for tag in sortedTags %}                
             <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">{{ tag }}</a>               
             {% endfor %}
-        </div>
+        </div> -->
     {% endif %}
 </div>
 
