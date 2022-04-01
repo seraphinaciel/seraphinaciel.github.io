@@ -11,14 +11,7 @@ post_class: post-template
     <!-- Author & Date  Box -->
     {% assign author = site.authors[name] %}
     {% if page.author %}
-    <div class="d-flex align-items-center mt-4">
-        <div>
-<!--             {% if author.avatar %} -->
-            <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
-<!--             {% else %}
-            <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-            {% endif %} -->
-        </div>            
+    <div class="d-flex align-items-center mt-4" style="justify-content:space-between">         
         <div>
             By <strong>{{ site.name }}</strong> on 
         <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
@@ -26,7 +19,16 @@ post_class: post-template
         (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
         {% endif %}
         </div>            
-    </div>
+        <div>
+            {% assign sortedCategories = page.categories | sort %}
+            {% for category in sortedCategories %}
+            <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>                
+            {% endfor %}
+            {% assign sortedTags = page.tags | sort %}
+            {% for tag in sortedTags %}                
+            <a class="smoothscroll badge badge-primary text-capitalize" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">{{ tag }}</a>               
+            {% endfor %}
+        </div>
     {% endif %}
 </div>
 
@@ -37,16 +39,7 @@ post_class: post-template
 
 
    
-<p style="font-size:2em">
-    {% assign sortedCategories = page.categories | sort %}
-    {% for category in sortedCategories %}
-    <span style="color:red">{{ category }}</span>
-    {% endfor %}
-    {% assign sortedTags = page.tags | sort %}
-    {% for tag in sortedTags %}                
-    <span style="color:blue">{{ tag }}</span>
-    {% endfor %}
-</p>
+
 <!-- Featured Image -->
 <!-- {% include featured-image.html %} -->
 
