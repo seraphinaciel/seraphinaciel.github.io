@@ -40,9 +40,12 @@ post_class: post-template
 <p style="font-size:2em">
     {% assign sortedCategories = page.categories | sort %}
     {% for category in sortedCategories %}
-    {{ page.categories }}, {{ category }}, {{ tag }} 
+    <span style="color:red">{{ category }}</span>
     {% endfor %}
-    {{ page.categories }}, {{ category }}, {{ tag }} 
+    {% assign sortedTags = page.tags | sort %}
+    {% for tag in sortedTags %}                
+    <span style="color:blue">{{ tag }}</span>
+    {% endfor %}
 </p>
 <!-- Featured Image -->
 <!-- {% include featured-image.html %} -->
