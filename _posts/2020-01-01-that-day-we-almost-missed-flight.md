@@ -1,16 +1,79 @@
 ---
 layout: post
-title:  "That day when we almost missed our flight"
-author: sal
-categories: [ Travel, Lifestyle ]
-image: assets/images/17.jpg
+title:  "css로 형광펜 효과를 줘보자"
+author: sera
+categories: [ expand ]
+tags: [ css. font ]
+image: assets/images/expand.jpg
 ---
-The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter. 
 
-An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll... originated with us”. 
+콘텐츠에서 강조하거나 예쁘게 꾸미고 싶을 때 불릿을 사용하기도 하지만, 형광펜 효과 또한 만만치 않게 사용한다. 한눈에 보기 편하고 색으로 강조되니 특정한 내용을 강조하고 싶을 때, 혹은 콘텐츠의 제목으로 많이 사용하고 있다. 다들 알다시피 형광펜 하면 html의 mark 태그를 빼놓을 수 없다. mark 태그를 쓰면 되지 굳이 CSS로 형광펜 효과를 만들어 사용하는 이유가 뭘까? 지금부터 알아보자.
 
-> It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story. 
+<style>
+	.highlight-box{width:200px;}
+.hl-gradient{
+    background: linear-gradient(to top, #36fead 40%, transparent 40%);
+}
 
-The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes. 
+.highlight-b{
+	background: 0;
+    box-shadow: inset 0 -15px 0 #f3df4d;
+}
 
-As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.
+.thick{
+    border-bottom: 4px solid #f3df4d;
+}
+
+.hl-2{display:inline-block;position: relative;background:0}
+.hl-2 b{position:relative;z-index: 1}
+.hl-2:after{width: 100%;height:40%;background: lavender;display: inline-block;position:absolute;bottom:0;left:0;content: ""}
+.hl-1{background-color: antiquewhite;display:inline-block;}
+
+</style>
+<div class="highlight-box">
+	<mark class="hl-1">세종어제 훈민정음</mark>
+	<mark class="hl-1">나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</mark>
+</div>
+
+mark태그 display속성이 inline이며 전체에 배경색을 주니 원하는 효과가 나오지 않는다.
+우리가 원하는건 형광펜처럼 위아래 여백이 살짝 띄워진 스타일이다. 기본 mark 스타일에 변형을 줘보자!
+
+<div class="highlight-box">
+	<mark class="hl-2"><b>세종어제 훈민정음</b></mark>
+	<mark class="hl-2"><b>나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</b></mark>
+</div>
+
+mark태그의 배경을 없애고, 가상클래스를 만들었다. 이 경우 짧은 문장, 제목에는 적합하지만 문장이 길어지면 소용이 없다.
+inline-block, inline이어야만 하고, 위아래는 살짝 띄워져 있는 가운데만 색이 칠해져야 하며 내용이 길어져도 색과 크기가 변함이 없어야 한다.
+그래서 약간의 꼼수를 주기로 한다. 그라디언트와 그림자를 사용하면 깔끔하게 고민이 해결된다.
+
+<div class="highlight-box">
+	<mark class="hl-gradient">(그라디언트) 세종어제 훈민정음</mark>
+	<mark class="hl-gradient">나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</mark>
+	<mark class="highlight-b">(그림자) 세종어제 훈민정음</mark>
+	<mark class="highlight-b">나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</mark>
+</div>
+```html
+<mark class="hl-gradient">(그라디언트) 세종어제 훈민정음</mark>
+<mark class="hl-gradient">나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 
+	이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 
+	마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 
+	내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 
+	사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</mark>
+<mark class="highlight-b">(그림자) 세종어제 훈민정음</mark>
+<mark class="highlight-b">나랏말이 중국과 달라 문자와 서로 통하지 아니하므로 
+	이런 까닭으로 어리석은 백성이 이르고자 하는 바가 있어도 
+	마침내 제 뜻을 능히 펴지 못하는 사람이 많다. 
+	내가 이를 위해 불쌍히 여겨 새로 스물여덟 글자를 만드니 
+	사람마다 하여금 쉬이 익혀 날마다 씀에 편안케 하고자 할 따름이다.</mark>
+```
+```css
+.hl-gradient{
+    background: linear-gradient(to top, #36fead 40%, transparent 40%);
+}
+
+.highlight-b{
+	background: 0;
+    box-shadow: inset 0 -15px 0 #f3df4d;
+}
+```
